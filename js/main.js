@@ -75,4 +75,50 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
     });
   }
+
+  initCursorFX();
 });
+
+// Animated trend-arrow cursor trail. Skipped on touch devices and when the
+// user prefers reduced motion — native cursor GIFs don't animate in browsers,
+// so this is a following DOM element instead.
+function initCursorFX() {
+  const noHover = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (noHover || reduceMotion) return;
+
+  const el = document.createElement("img");
+  el.src = "assets/cursor-arrow-120.png";
+  el.alt = "";
+  el.setAttribute("aria-hidden", "true");
+  el.className = "cursor-fx";
+  document.body.appendChild(el);
+
+  let mouseX = -100;
+  let mouseY = -100;
+  let curX = mouseX;
+  let curY = mouseY;
+  let active = false;
+
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!active) {
+      active = true;
+      el.classList.add("active");
+    }
+  });
+
+  document.addEventListener("mouseleave", () => {
+    active = false;
+    el.classList.remove("active");
+  });
+
+  function tick() {
+    curX += (mouseX - curX) * 0.18;
+    curY += (mouseY - curY) * 0.18;
+    el.style.transform = `translate(${curX + 16}px, ${curY - 40}px) rotate(-8deg)`;
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}

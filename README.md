@@ -14,14 +14,18 @@ No build step or framework — plain HTML/CSS/JS, so it can be hosted anywhere
 ## Structure
 
 ```
-index.html          Home page
-services.html        Financial Technology Solutions (incl. RMS Excel)
-freelancing.html      Freelance Projects & Services
-about.html            Mission, values, team
-contact.html          Contact form + details
-css/style.css         All styles (design tokens at the top)
-js/main.js            Nav toggle, scroll reveal, active link, demo form handler
-assets/favicon.svg    XQG monogram favicon
+index.html              Home page
+services.html            Financial Technology Solutions (incl. RMS Excel)
+freelancing.html          Freelance Projects & Services
+about.html                Mission, values, team
+contact.html              Contact form + details
+css/style.css             All styles (design tokens at the top)
+js/main.js                Nav toggle, scroll reveal, active link, demo form, cursor fx
+assets/logo.png           Wordmark lockup, used in nav + footer
+assets/icon-*.png         Square app-icon mark, used for favicons
+assets/cursor-arrow-*.png Trimmed arrow/candlestick graphic, used for the cursor trail
+assets/xqg-icon.gif       Standalone animated (pulsing glow) version of the icon
+assets/source/            Original uploaded logo/icon/arrow artwork, unprocessed
 ```
 
 ## What to customize before launch
@@ -54,10 +58,20 @@ This site ships with realistic but placeholder content. Replace the following:
      broker-dealer or investment adviser; update it if that changes.
 
 5. **Branding**
-   - The favicon/logo mark (`assets/favicon.svg`) is a simple "XQG" monogram
-     on a green gradient. Swap in a real logo if you have one.
+   - The nav/footer logo and favicons are generated from your real uploaded
+     artwork (`assets/source/LOGO.png`, `ICON.png`, `Curser.png`), auto-trimmed
+     and made transparent. If you get updated brand art later, re-run the same
+     trim/crop process (or ask for it) rather than hand-editing the generated
+     PNGs.
+   - A small blue arrow/candlestick icon follows the mouse across the site
+     (`.cursor-fx` in `css/style.css` + `initCursorFX()` in `js/main.js`) —
+     it's automatically disabled on touch devices and for users with
+     `prefers-reduced-motion` set. Remove the `initCursorFX()` call in
+     `js/main.js` to turn it off entirely.
    - Colors and fonts are defined as CSS variables at the top of
-     `css/style.css` (`:root { ... }`) if you want to adjust the palette.
+     `css/style.css` (`:root { ... }`) if you want to adjust the palette —
+     brand blue is `--accent`; green/red (`--success` / `--danger`) are
+     reserved for market up/down indicators only, not general UI.
 
 6. **RMS Excel screenshots**
    - The "live data" panels on the home and services pages are illustrative

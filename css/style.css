@@ -11,9 +11,10 @@
   --text: #e8edf5;
   --text-dim: #97a3b7;
   --text-faint: #647089;
-  --accent: #22c55e;
-  --accent-dim: #16341f;
-  --accent-2: #d4af37;
+  --accent: #2f7dfa;
+  --accent-dim: #122647;
+  --accent-2: var(--accent);
+  --success: #22c55e;
   --danger: #f87171;
   --radius: 14px;
   --radius-sm: 8px;
@@ -48,8 +49,8 @@ body::before {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(60vw 40vw at 85% -5%, rgba(34, 197, 94, 0.10), transparent 60%),
-    radial-gradient(50vw 35vw at 5% 10%, rgba(212, 175, 55, 0.06), transparent 60%);
+    radial-gradient(60vw 40vw at 85% -5%, rgba(47, 125, 250, 0.12), transparent 60%),
+    radial-gradient(50vw 35vw at 5% 10%, rgba(180, 200, 230, 0.05), transparent 60%);
   pointer-events: none;
 }
 
@@ -148,12 +149,12 @@ p { color: var(--text-dim); }
 .btn:hover { transform: translateY(-2px); }
 
 .btn-primary {
-  background: linear-gradient(180deg, #2fdb73, var(--accent));
-  color: #052b12;
-  box-shadow: 0 10px 30px -8px rgba(34, 197, 94, 0.55);
+  background: linear-gradient(180deg, #5b9dff, var(--accent));
+  color: #071229;
+  box-shadow: 0 10px 30px -8px rgba(47, 125, 250, 0.55);
 }
 
-.btn-primary:hover { box-shadow: 0 14px 34px -6px rgba(34, 197, 94, 0.65); }
+.btn-primary:hover { box-shadow: 0 14px 34px -6px rgba(47, 125, 250, 0.65); }
 
 .btn-ghost {
   background: rgba(255, 255, 255, 0.03);
@@ -200,27 +201,14 @@ p { color: var(--text-dim); }
   letter-spacing: -0.01em;
 }
 
-.brand-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent) 0%, #0f7a3a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #052b12;
-  font-weight: 800;
-  font-size: 0.95rem;
-  box-shadow: 0 6px 18px -6px rgba(34, 197, 94, 0.7);
+.brand-logo {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
-.brand small {
-  display: block;
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: var(--text-faint);
-  margin-top: 1px;
+.footer-brand .brand-logo {
+  height: 46px;
 }
 
 .nav-links {
@@ -430,9 +418,9 @@ p { color: var(--text-dim); }
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(47, 125, 250, 0.12);
   color: var(--accent-2);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(47, 125, 250, 0.3);
 }
 
 /* ---------- Split / feature sections ---------- */
@@ -518,14 +506,14 @@ p { color: var(--text-dim); }
 .mock-row:last-child { border-bottom: none; }
 .mock-row .label { color: var(--text-dim); }
 .mock-row .value { font-weight: 700; font-family: var(--font-head); }
-.value.up { color: var(--accent); }
+.value.up { color: var(--success); }
 .value.down { color: var(--danger); }
 
 .mock-sparkline {
   height: 64px;
   margin-top: 6px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(180deg, rgba(34,197,94,0.12), transparent);
+  background: linear-gradient(180deg, rgba(47,125,250,0.14), transparent);
   position: relative;
   overflow: hidden;
 }
@@ -567,7 +555,7 @@ p { color: var(--text-dim); }
 .cta-banner {
   border-radius: 20px;
   padding: 56px;
-  background: linear-gradient(135deg, rgba(34,197,94,0.14), rgba(212,175,55,0.06));
+  background: linear-gradient(135deg, rgba(47,125,250,0.16), rgba(180,200,230,0.05));
   border: 1px solid var(--border-strong);
   display: flex;
   align-items: center;
@@ -747,7 +735,7 @@ p { color: var(--text-dim); }
   padding: 16px 18px;
   border-radius: var(--radius-sm);
   background: var(--accent-dim);
-  border: 1px solid rgba(34,197,94,0.4);
+  border: 1px solid rgba(47,125,250,0.4);
   color: var(--accent);
   font-size: 0.9rem;
   font-weight: 600;
@@ -767,6 +755,29 @@ p { color: var(--text-dim); }
   font-size: 0.76rem;
   color: var(--text-faint);
   line-height: 1.7;
+}
+
+/* ---------- Cursor trail effect ---------- */
+
+.cursor-fx {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: auto;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  will-change: transform;
+  transition: opacity 0.25s ease;
+  animation: cursorPulse 2.2s ease-in-out infinite;
+}
+
+.cursor-fx.active { opacity: 0.85; }
+
+@keyframes cursorPulse {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(47, 125, 250, 0.45)); }
+  50% { filter: drop-shadow(0 0 15px rgba(47, 125, 250, 0.8)); }
 }
 
 /* ---------- Footer ---------- */
