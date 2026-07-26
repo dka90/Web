@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Financial Technology Solutions | XQG Group</title>
-<meta name="description" content="Custom financial technology solutions from XQG Group — trading technology, RMS Excel for live market data and risk management, and bespoke market software.">
+<meta name="description" content="Custom financial technology solutions from XQG Group — trading technology, RMS for risk management, LiveGrid RTD for live Excel price feeds, and bespoke market software.">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png">
 <link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
@@ -81,27 +81,22 @@
     </div>
   </section>
 
-  <!-- RMS Excel -->
-  <section class="section" id="rms-excel">
+  <!-- RMS -->
+  <section class="section" id="rms">
     <div class="container">
       <div class="split">
         <div class="split-text reveal">
           <span class="badge">Flagship Product</span>
-          <h2 style="margin-top:16px;">RMS Excel</h2>
+          <h2 style="margin-top:16px;">RMS — our Risk Management System</h2>
           <p style="margin-top:14px;">
-            RMS Excel is our Risk Management System built directly on top of Excel. It
-            streams live market data into your spreadsheets and layers on real-time risk
-            and exposure tracking — so you get a purpose-built risk tool without leaving
-            the environment your team already relies on.
+            RMS is a dedicated risk management platform — built as its own product, not
+            bolted onto a spreadsheet. It gives trading desks real-time visibility into
+            positions, exposure, and limits, independent of any single workstation or file.
           </p>
           <ul class="feature-list">
             <li>
               <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <div><strong>Live price feed integration</strong><span>Streams real-time market data directly into Excel cells.</span></div>
-            </li>
-            <li>
-              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <div><strong>Position &amp; exposure tracking</strong><span>See live exposure across instruments, desks, or accounts.</span></div>
+              <div><strong>Live position &amp; exposure tracking</strong><span>See live exposure across instruments, desks, or accounts.</span></div>
             </li>
             <li>
               <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -113,7 +108,7 @@
             </li>
             <li>
               <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <div><strong>No workflow disruption</strong><span>Runs inside Excel — no new platform for your team to learn.</span></div>
+              <div><strong>Built to fit your stack</strong><span>Integrates with your existing data sources — not tied to any one tool.</span></div>
             </li>
           </ul>
           <a href="contact.html" class="btn btn-primary" style="margin-top:28px;">Request a Walkthrough</a>
@@ -123,16 +118,78 @@
           <div class="panel">
             <div class="panel-bar"><span></span><span></span><span></span></div>
             <div class="panel-body">
-              <div class="mock-row"><span class="label">Symbol</span><span class="value">Live Price</span></div>
-              <div class="mock-row"><span class="label">RELIANCE</span><span class="value up">▲ 2,945.10</span></div>
-              <div class="mock-row"><span class="label">HDFCBANK</span><span class="value down">▼ 1,612.55</span></div>
-              <div class="mock-row"><span class="label">TCS</span><span class="value up">▲ 3,880.20</span></div>
-              <div class="mock-row"><span class="label">Net Exposure</span><span class="value">₹ 84.6 L</span></div>
+              <div class="mock-row"><span class="label">Desk Exposure</span><span class="value">₹ 4.8 Cr</span></div>
+              <div class="mock-row"><span class="label">1-Day VaR</span><span class="value">₹ 12.4 L</span></div>
+              <div class="mock-row"><span class="label">Margin Utilization</span><span class="value up">62%</span></div>
+              <div class="mock-row"><span class="label">Active Alerts</span><span class="value down">2 Breaches</span></div>
               <div class="mock-row"><span class="label">Risk Status</span><span class="value up">Within Limit</span></div>
               <div class="mock-sparkline"></div>
             </div>
           </div>
           <p style="margin-top:14px; font-size:0.8rem; text-align:center;" class="placeholder-note">Illustrative preview — actual layout is configured per client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LiveGrid RTD -->
+  <section class="section" id="livegrid-rtd">
+    <div class="container">
+      <div class="split reverse">
+        <div class="split-text reveal">
+          <span class="badge">Excel Add-in</span>
+          <h2 style="margin-top:16px;">LiveGrid RTD — real-time NSE, BSE &amp; MCX prices, inside Excel</h2>
+          <p style="margin-top:14px;">
+            LiveGrid RTD streams live quotes from every major Indian exchange and segment
+            straight into Excel cells with <code>=RTD()</code> formulas — over a plain
+            internet connection, with no manual refresh and no stale data waiting on F9.
+          </p>
+          <ul class="feature-list">
+            <li>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <div><strong>Drop-in RTD formulas</strong><span>Existing <code>=RTD("rtdserver",,"symbol","field")</code> formulas just work — no macros or rebuilding sheets.</span></div>
+            </li>
+            <li>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <div><strong>Sub-second, tick-true updates</strong><span>Cells move with the market, not with a refresh button.</span></div>
+            </li>
+            <li>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <div><strong>Multi-exchange, one feed</strong><span>Equities, futures, options, currency, and commodity quotes across NSE, BSE, MCX, and NSE Com.</span></div>
+            </li>
+            <li>
+              <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <div><strong>Resilient by design</strong><span>A VBA fallback timer keeps data flowing even if the native callback path is blocked.</span></div>
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:28px;">Request a Walkthrough</a>
+        </div>
+
+        <div class="split-visual reveal">
+          <div class="panel">
+            <div class="panel-bar"><span></span><span></span><span></span></div>
+            <div class="panel-body">
+              <div class="mock-row"><span class="label" style="font-family:var(--font-head); font-size:0.76rem; color:var(--text-faint);">=RTD("rtdserver",,"NIFTY24AUG24000CE","LTP")</span></div>
+              <div class="mock-row"><span class="label">NIFTY24AUG24000CE</span><span class="value up">▲ 142.35</span></div>
+              <div class="mock-row"><span class="label">RELIANCE</span><span class="value up">▲ 2,938.50</span></div>
+              <div class="mock-row"><span class="label">GOLD24AUGFUT</span><span class="value down">▼ 72,415.00</span></div>
+              <div class="mock-row"><span class="label">GIFT NIFTY</span><span class="value up">▲ 24,210.00</span></div>
+              <div class="mock-sparkline"></div>
+            </div>
+          </div>
+          <p style="margin-top:14px; font-size:0.8rem; text-align:center;" class="placeholder-note">Illustrative preview — actual layout is configured per client.</p>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:40px;">
+        <div class="panel-bar"><span></span><span></span><span></span></div>
+        <div class="panel-body">
+          <div class="mock-row"><span class="label">Interface</span><span class="value">Excel RTD (IRtdServer COM)</span></div>
+          <div class="mock-row"><span class="label">Connectivity</span><span class="value">Internet-based feed — no leased line</span></div>
+          <div class="mock-row"><span class="label">Exchanges</span><span class="value">NSE, BSE, MCX, NSE Com</span></div>
+          <div class="mock-row"><span class="label">Segments</span><span class="value">Cash, F&amp;O, currency, commodity</span></div>
+          <div class="mock-row"><span class="label">Update mechanism</span><span class="value">Native SetTimer, same-thread UpdateNotify</span></div>
+          <div class="mock-row"><span class="label">Fallback path</span><span class="value">VBA Application.OnTime polling</span></div>
         </div>
       </div>
     </div>
@@ -243,7 +300,8 @@
       <div class="footer-col">
         <h4>Solutions</h4>
         <ul>
-          <li><a href="services.html#rms-excel">RMS Excel</a></li>
+          <li><a href="services.html#rms">RMS</a></li>
+          <li><a href="services.html#livegrid-rtd">LiveGrid RTD</a></li>
           <li><a href="services.html#trading-tech">Trading Technology</a></li>
           <li><a href="services.html#custom-solutions">Custom Market Solutions</a></li>
         </ul>
